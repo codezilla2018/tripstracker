@@ -29,7 +29,7 @@ use Facebook\HttpClients\FacebookHttpable;
 use Facebook\HttpClients\FacebookStream;
 use Facebook\HttpClients\FacebookStreamHttpClient;
 session_start();
-$helper = new FacebookRedirectLoginHelper('http://localhost/floginproj/fbhome.php','172688646739485','a86bd66ad18cc60a356b58c3eef0e09d');
+$helper = new FacebookRedirectLoginHelper('https://facebooktrips.cf/fbhome.php','172688646739485','a86bd66ad18cc60a356b58c3eef0e09d');
 FacebookSession::setDefaultApplication( '172688646739485','a86bd66ad18cc60a356b58c3eef0e09d' );
 //check if a session already exists
 if ( isset( $_SESSION ) && isset( $_SESSION['fb_token'] ) ) {
@@ -94,7 +94,7 @@ $_SESSION['fb_token'] = $session->getToken();
     echo '<br />Gender: '.$graph_user->getProperty('gender');
     echo '<br />Profile Link: '.$graph_user->getLink();
     echo '<br />Email ID: '.$graph_user->getProperty('email').'</td></table>';
-    echo '<br /><a href="' . $helper->getLogoutUrl( $session, 'http://localhost/floginproj/index.php' ) . '">Logout</a>';
+    echo '<br /><a href="' . $helper->getLogoutUrl( $session, 'https://facebooktrips.cf/fbhome.php' ) . '">Logout</a>';
 }
 else {
 // show login url
