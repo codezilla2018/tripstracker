@@ -7,7 +7,7 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.12',
   ]);
 $helper = $fb->getRedirectLoginHelper();
-$permissions = ['user_birthday', 'user_location', 'user_website']; // optional
+$permissions = ['user_birthday', 'user_location']; // optional
 	
 try {
 	if (isset($_SESSION['localhost_app_token'])) {
@@ -44,7 +44,7 @@ if (isset($accessToken)) {
 	}
 	// getting basic info about user
 	try {
-		$profile_request = $fb->get('/me?fields=name,first_name,last_name,birthday,website,location');
+		$profile_request = $fb->get('/me?fields=name,first_name,last_name,birthday,location');
 		$profile = $profile_request->getGraphNode()->asArray();
 	} catch(Facebook\Exceptions\FacebookResponseException $e) {
 		// When Graph returns an error
@@ -61,7 +61,7 @@ if (isset($accessToken)) {
 	
 	// printing $profile array on the screen which holds the basic info about user
 	echo $profile['birthday']->format('d-m-Y');
-	echo $profile['website'];
+	//echo $profile['website'];
 	echo $profile['location']['name'];
   	// Now you can redirect to another page and use the access token from $_SESSION['localhost_app_token']
 } else {
