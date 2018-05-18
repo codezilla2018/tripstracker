@@ -20,7 +20,7 @@ use Facebook\FacebookSDKException;
 use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
-$helper = new FacebookRedirectLoginHelper('http://localhost/tripstracker/fbhome.php', '172688646739485','a86bd66ad18cc60a356b58c3eef0e09d');
+$helper = new FacebookRedirectLoginHelper('https://facebooktrips.cf/fbhome.php', '172688646739485','a86bd66ad18cc60a356b58c3eef0e09d');
 $loginUrl = $helper->getLoginUrl();
 echo '<br /><a href="' . $helper->getLoginUrl() . '">Login with Facebook</a>';
 ?>
