@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . 'Facebook/autoload.php'; // download official fb sdk for php @ https://github.com/facebook/php-graph-sdk
+require_once __DIR__ . '/src/Facebook/autoload.php'; // download official fb sdk for php @ https://github.com/facebook/php-graph-sdk
 $fb = new Facebook\Facebook([
   'app_id' => '172688646739485',
   'app_secret' => 'a86bd66ad18cc60a356b58c3eef0e09d',
